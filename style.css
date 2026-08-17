@@ -147,10 +147,6 @@ h1 {
     margin-bottom: 28px;
 }
 
-.result-info {
-    flex: 1;
-}
-
 .result-label {
     font-size: 12px;
     font-weight: 600;
@@ -159,6 +155,12 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 0.8px;
     color: #ffdd57;
+}
+
+.url-copy-inline {
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 .result-text {
@@ -170,6 +172,7 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.08);
     font-family: 'Courier New', monospace;
     font-weight: 500;
+    flex: 1;
 }
 
 .copy-btn {
@@ -187,6 +190,26 @@ h1 {
     box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
 }
 
+.copy-btn:hover {
+    background-color: #45b8b8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+}
+
+.copy-btn.copied {
+    background-color: #51cf66;
+    box-shadow: 0 4px 15px rgba(81, 207, 102, 0.3);
+}
+
+@media (max-width: 768px) {
+    .url-copy-inline {
+        flex-direction: column;
+    }
+
+    .copy-btn {
+        width: 100%;
+    }
+}
 .copy-btn:hover {
     background-color: #45b8b8;
     transform: translateY(-2px);
