@@ -30,3 +30,45 @@
             <div class="result-item">
                 <div class="result-info">
                     <div class="result-label">Your Short Link</div>
+                    <div class="result-text" id="short-url-display"></div>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard()" id="copy-btn">Copy</button>
+            </div>
+
+            <div class="result-item">
+                <div class="result-info">
+                    <div class="result-label">Original URL</div>
+                    <div class="result-text" id="original-url-display"></div>
+                </div>
+            </div>
+
+            <div class="qr-section">
+                <h3>Scan QR Code</h3>
+                <img id="qr-code" src="" alt="QR Code">
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="total-urls">0</div>
+                    <div class="stat-label">URLs Shortened</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="total-clicks">0</div>
+                    <div class="stat-label">Total Clicks</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h2>Your Links</h2>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 LinkCut - Created by Shlok Page</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
