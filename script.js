@@ -133,7 +133,7 @@ function updateHistory() {
             <div class="history-url">
                 <div class="history-short">${window.location.href.split('?')[0]}?s=${url.short}</div>
                 <div class="history-long">${url.long}</div>
-                <div style="font-size: 11px; opacity: 0.6; margin-top: 5px;">Created: ${url.created}</div>
+                <div class="history-created">Created: ${url.created}</div>
             </div>
             <div class="history-clicks">${url.clicks} clicks</div>
             <button class="delete-btn" onclick="deleteURL('${url.short}')">Delete</button>
@@ -150,30 +150,6 @@ function deleteURL(shortCode) {
     delete urls[shortCode];
     localStorage.setItem("urls", JSON.stringify(urls));
     updateHistory();
-}
-
-// Toggle light mode
-function toggleTheme() {
-    const toggle = document.getElementById("light-toggle");
-    
-    if (toggle.checked) {
-        document.body.classList.add("light-mode");
-        localStorage.setItem("theme", "light");
-        document.getElementById("theme-label").textContent = "Light Mode";
-    } else {
-        document.body.classList.remove("light-mode");
-        localStorage.setItem("theme", "dark");
-        document.getElementById("theme-label").textContent = "Light Mode";
-    }
-}
-
-// Load theme preference
-function loadTheme() {
-    const saved = localStorage.getItem("theme");
-    if (saved === "light") {
-        document.getElementById("light-toggle").checked = true;
-        document.body.classList.add("light-mode");
-    }
 }
 
 // Handle short URL redirect
@@ -195,7 +171,6 @@ function handleRedirect() {
 
 // Initialize on page load
 window.addEventListener("load", () => {
-    loadTheme();
     updateHistory();
     handleRedirect();
 });
